@@ -1,11 +1,11 @@
 {
   "ios": {
-    "0.0.1": {
+    "0.0.5": {
       "auth": "http://localhost:9003/[name][ext]"
     }
   },
   "android": {
-    "0.0.1": {
+    "0.0.5": {
       "auth": "http://localhost:9003/[name][ext]"
     }
   }

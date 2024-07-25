@@ -37,7 +37,7 @@ This showcase is a monorepository with a few apps using micro-frondend architect
     <td><img src="images/host-main-screen.png" alt="host-main-screen" width="200"></td>
     <td><img src="images/host.gif" alt="host" width="200"></td>
     <td><img src="images/booking.gif" alt="booking" width="200"></td>
-  </tr>  
+  </tr>
 </table>
 
 ## Structure
@@ -65,6 +65,12 @@ Each of the mini apps could be deployed and run as a standalone app.
 We use `pnpm` to manage dependencies. Learn how to install `pnpm` [here](https://pnpm.io/installation)
 
 ### Setup
+
+Generate the code signing certificate
+
+```bash
+ openssl genrsa -out code-signing.pem 2048
+ ```
 
 Install dependencies for all apps:
 
@@ -196,3 +202,11 @@ Super App showcase is an open source project and will always remain free to use.
 [callstack-badge]: https://callstack.com/images/callstack-badge.svg
 [callstack]: https://callstack.com/open-source/?utm_source=github.com&utm_medium=referral&utm_campaign=super-app-showcase&utm_term=readme-badge
 [callstack-readme-with-love]: https://callstack.com/?utm_source=github.com&utm_medium=referral&utm_campaign=super-app-showcase&utm_term=readme-with-love
+
+## Test deep linking
+
+Execute the following command:
+
+```bash
+npx uri-scheme open "mychat://News" --android
+```

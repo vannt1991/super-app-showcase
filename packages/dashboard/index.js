@@ -15,6 +15,7 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
     platform: Platform.OS,
     appName,
   });
+  console.log({containersURL: containersURL});
   const response = await fetch(containersURL);
 
   const containers = await response.json();
@@ -26,6 +27,7 @@ ScriptManager.shared.addResolver(async (scriptId, caller) => {
   let url;
   if (caller === 'main') {
     url = Script.getDevServerURL(scriptId);
+    console.log({getDevServerURL: url});
   } else {
     url = resolveURL(scriptId, caller);
   }

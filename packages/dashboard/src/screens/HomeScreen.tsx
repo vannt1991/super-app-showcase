@@ -20,6 +20,15 @@ import bookings from '../data/bookings.json';
 import products from '../data/products.json';
 import news from '../data/news.json';
 import articles from '../data/articles.json';
+import {CompositeScreenProps} from '@react-navigation/native';
+import {HomeStackParamList} from '../navigation/HomeNavigator';
+import {MainStackParamList} from '../navigation/MainNavigator';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+
+type HomeScreenProps = CompositeScreenProps<
+  NativeStackScreenProps<HomeStackParamList, 'Home'>,
+  NativeStackScreenProps<MainStackParamList>
+>;
 
 const showNotImplementedAlert = () => Alert.alert('Not implemented yet');
 
@@ -73,7 +82,7 @@ const renderArticle: ListRenderItem<any> = ({item, index}) => (
 
 const renderDivider = () => <Divider style={styles.divider} />;
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}: HomeScreenProps) => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
@@ -140,6 +149,21 @@ const HomeScreen = () => {
         ItemSeparatorComponent={renderDivider}
         contentContainerStyle={styles.contentContainer}
       />
+      <View style={styles.header}>
+        <Text variant="titleLarge" style={styles.headerTitle}>
+          Details page
+        </Text>
+        <Button
+          mode="contained-tonal"
+          onPress={() => {
+            navigation.navigate('Details', {
+              userId: 'mock_user_id',
+              otherParam: 'other',
+            });
+          }}>
+          Manage
+        </Button>
+      </View>
     </ScrollView>
   );
 };

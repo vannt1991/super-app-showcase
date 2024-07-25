@@ -1,5 +1,11 @@
 # dashboard
 
+## 0.0.5
+
+### Patch Changes
+
+- dashboard v0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

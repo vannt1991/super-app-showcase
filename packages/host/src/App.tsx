@@ -19,6 +19,12 @@ const App = () => {
     screens: {
       Chat: 'feed/:sort',
       News: 'News',
+      Dashboard: {
+        path: 'Dashboard',
+        screens: {
+          Details: 'Details/:userId/:otherParam',
+        },
+      },
     },
   };
 
